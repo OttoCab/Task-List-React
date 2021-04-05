@@ -24,7 +24,11 @@ const handleSubmit = (e) =>{
     setTareas([...tareas, tareaInd])
     // limpiar el input
     setTareaInd('')
+}
 
+const borrarTarea = (nombre) =>{
+    let arregloModificado = tareas.filter((dato) => dato !== nombre);
+    setTareas(arregloModificado);
 }
 
 return (
@@ -49,7 +53,7 @@ return (
         </form>
     </div>
     <section className='container my-5'>
-    <ListaTarea arregloTareas={tareas}></ListaTarea>
+    <ListaTarea arregloTareas={tareas} borrarTarea={borrarTarea}></ListaTarea>
     </section>
     </Fragment>
 );
