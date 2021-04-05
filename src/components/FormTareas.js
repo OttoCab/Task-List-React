@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
+import ListaTarea from "./ListaTarea";
 
 const FormTareas = () => {
   // En esta parte escribo la logica de js
@@ -21,10 +22,14 @@ const handleSubmit = (e) =>{
     // Spread operator  "...nombreVar"
     // guardar una tarea en el arreglo de tareas
     setTareas([...tareas, tareaInd])
+    // limpiar el input
+    setTareaInd('')
+
 }
 
 return (
     // Aqui tmb puede ir logica
+    <Fragment>
     <div className="container d-flex justify-content-center">
         {/* Codigo html */}
         {/* Sugerencia, si no se como llamar a una funcion que se llama al suceder un evento puedo llamarlo "handle" + 
@@ -36,12 +41,17 @@ return (
                     placeholder="Ingrese una tarea"
                     className="form-control me-2"
                     onChange={(e) => setTareaInd(e.target.value)}
+                    value={tareaInd}
                 />
                 {/* los eventos van en camelCase */}
                 <button className="btn btn-outline-light" type='submit'>Agregar</button>
             </div>
         </form>
     </div>
+    <section className='container my-5'>
+    <ListaTarea></ListaTarea>
+    </section>
+    </Fragment>
 );
 };
 
