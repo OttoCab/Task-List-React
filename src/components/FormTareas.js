@@ -49,7 +49,7 @@ return (
         </form>
     </div>
     <section className='container my-5'>
-    <ListaTarea></ListaTarea>
+    <ListaTarea arregloTareas={tareas}></ListaTarea>
     </section>
     </Fragment>
 );
