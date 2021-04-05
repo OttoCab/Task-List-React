@@ -1,7 +1,10 @@
 import { Fragment } from 'react';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Subtitulo from './components/Subtitulo';
 import Titulo from './components/Titulo';
+import FormTareas from './components/FormTareas';
+
 
 function App() {
   return (
@@ -19,6 +22,10 @@ function App() {
     // Fragment: componente que creo la gente de react
     // me importa automaticamente el Fragment (ver arriba)
     <Fragment>
+      <Titulo prueba={false}></Titulo>
+      <Subtitulo comision='1A' estado={true}/>
+      <FormTareas/>
+      {/* <hr/> */}
       {/* <h1>Lista de Tareas</h1>
       <ul>
         <li>prueba</li>
@@ -26,9 +33,6 @@ function App() {
         <li>prueba</li>
         <li>prueba</li>
       </ul> */}
-      <Titulo prueba={false}></Titulo>
-      <Subtitulo comision='1A' estado={true}/>
-      {/* <hr/> */}
     </Fragment>
   );
 }
